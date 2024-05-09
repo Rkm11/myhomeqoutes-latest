@@ -46,6 +46,14 @@ a:hover {
     gap: 10px;
 }
 
+.hero-animated p {
+    margin: 15px 0 0 0;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: normal;
+    color: #fff;
+}
+
 .service-select {
 	line-height: 21px;
     padding: 20px 45px;
@@ -99,7 +107,9 @@ h4,
 h5,
 h6 {
   font-family: var(--font-primary);
+  color:#fff;
 }
+
 
 /*--------------------------------------------------------------
 # Preloader
@@ -150,7 +160,7 @@ h6 {
 # Sections & Section Header
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 20px 0;
   overflow: hidden;
 }
 
@@ -170,6 +180,7 @@ section {
   margin: 0 auto;
   color: var(--color-secondary-light);
 }
+
 
 @media (min-width: 1280px) {
   .section-header p {
@@ -341,6 +352,13 @@ color: var(--color-primary) !important;
     --bs-btn-disabled-border-color: #0d6efd;
 }
 
+
+.slide__rat .name {
+	color:white;
+	padding:4px;
+	font-size:10px;
+	border-radius:20px;
+}
 .header.sticked {
   background: var(--color-white);
   box-shadow: 0px 2px 20px rgba(var(--color-secondary-rgb), 0.1);
@@ -348,7 +366,13 @@ color: var(--color-primary) !important;
 }
 
 .name.green {
-    background: #59b3a5;
+    background: #94C565;
+}
+.name.dark-blue {
+	background:#2e3ece;
+}
+.name.night-blue {
+	background-color:#6977f9;
 }
 .slide__item .text {
     margin: 5px 0 0 0;
@@ -402,7 +426,7 @@ color: var(--color-primary) !important;
 }
 
 .header .logo img {
-  max-height: 76px;
+  max-height: 50px;
   margin-right: 6px;
 }
 
@@ -753,12 +777,15 @@ min-height:60px;
 .hero-animated {
   width: 100%;
   min-height: 50vh;
-  background: url("../img/hero-bg.png") center center;
+  background: url(../img/home-top-bg.webp) no-repeat;
   background-size: cover;
-  position: relative;
-  padding: 120px 0 60px;
+  background-position: center center;
+  --padding: 120px 0 60px;
 }
 
+.featured-services{
+	background-color:#f8f8f8
+}
 .hero-animated h2 {
   margin: 0 0 10px 0;
   font-size: 48px;
@@ -774,13 +801,6 @@ min-height:60px;
 
 .hero-animated h2 span {
   color: var(--color-primary);
-}
-
-.hero-animated p {
-  color: rgba(var(--color-secondary-rgb), 0.8);
-  margin: 0 0 30px 0;
-  font-size: 20px;
-  font-weight: 400;
 }
 
 .hero-animated .animated {
@@ -1265,6 +1285,7 @@ min-height:60px;
   transition: all ease-in-out 0.4s;
   background: var(--color-white);
   height: 100%;
+  border-radius:30px;
 }
 
 .featured-services .service-item .icon {
@@ -1318,6 +1339,18 @@ min-height:60px;
   content: "";
   background: url("../img/about-bg.png") top left;
   background-repeat: no-repeat;
+}
+
+.dummy-div{
+	margin-left:35px;
+}
+
+.clients .text {
+    color: #444;
+    margin: 10px 0 0 0;
+    --font-size: 18px;
+    font-style: normal;
+    --font-weight: 400;
 }
 
 @media (max-width: 575px) {
@@ -3209,12 +3242,13 @@ min-height:60px;
 # Footer
 --------------------------------------------------------------*/
 .footer {
-  color: var(--color-white);
+  color: black;
   font-size: 14px;
+  background-color:#fff;
 }
 
 .footer .footer-content {
-  background: var(--color-secondary);
+  background-color:#f5f7f8;
   padding: 60px 0 30px 0;
 }
 
@@ -3290,6 +3324,11 @@ min-height:60px;
   padding-top: 0;
 }
 
+a.footer-url {
+    color: black;
+    font-weight: bold;
+}
+
 .footer .footer-content .footer-links ul a {
   color: rgba(var(--color-white-rgb), 0.7);
   transition: 0.3s;
@@ -3340,7 +3379,7 @@ min-height:60px;
 
 .footer .footer-legal {
   padding: 30px 0;
-  background: var(--color-secondary-dark);
+  background: #f5f7f8;
 }
 
 .footer .footer-legal .credits {
