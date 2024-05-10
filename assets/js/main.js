@@ -100,6 +100,19 @@ var allDetails = {
 	},
 }
 
+$('.carousel').carousel({
+  interval: 2000
+})
+
+$(".window-featured,.roofing-featured,.bathroom-featured").click(function(){
+		let selectedService=$("#selected-Service").val();	
+		console.log(selectedService);
+		urlS=window.location.href
+		urlS=urlS.replace("index.html",'')
+		urlS=urlS.replace("#",'')
+	window.location.assign(urlS+ selectedService+'.html')
+});
+
 $("#unsubscribe").click(function(){
 	let unsubscribeEmail=$("#unsubscribe-email").val();	
 	$(".validate__text").hide();
