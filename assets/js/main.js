@@ -1,14 +1,107 @@
-/**
-* Template Name: HeroBiz
-* Template URL: https://bootstrapmade.com/herobiz-bootstrap-business-template/
-* Updated: Mar 17 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+var allDetails = {
+	"footerDesc":"This Website is an advertising marketplace for individuals and companies who are seeking consumer referrals for services or products. We are not a provider, manufacturer, or installer. The information provided by you to us will be sent to a manufacturer and/or installer in your area. We do not endorse, warrant, or guarantee any service or products of any individual or company you choose. While any information shared with you is believed to be accurate and reliable, the owners/operators of this Website specifically disclaim all warranties, express, implied or statutory, regarding the accuracy, timeliness, and/or completeness of the information provided. The content of any information or service contained thereon (the “Content”) are provided on an as is basis. Federal and State tax credits or incentives are not available in all locations and not available to all individuals.",
+	"bathroomService":"Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi",
+	"windowService":"Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi",
+	"roofingService":"Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi",
+	"mainSlider": {
+		"slider1":{
+			"service":"roofing",
+			"stars":"5-stars.svg",
+			"author":"Willie Browning, San Antonio, TX",
+			"title":"I found my window contractor here",
+			"description":"I lacked time looking for window replacement companies myself, so a contractor-matching website seemed an excellent way to go. As soon as I left my request, I got an email with offers from local contractors."
+		},
+		"slider2":{
+			"service":"bathroom",
+			"stars":"4s-stars.svg",
+			"author":"Willie Browning, San Antonio, TX",
+			"title":"I found my window contractor here",
+			"description":"I lacked time looking for window replacement companies myself, so a contractor-matching website seemed an excellent way to go. As soon as I left my request, I got an email with offers from local contractors."
+		},
+		"slider3":{
+			"service":"windows",
+			"stars":"4s-stars.svg",
+			"author":"Willie Browning, San Antonio, TX",
+			"title":"I found my window contractor here",
+			"description":"I lacked time looking for window replacement companies myself, so a contractor-matching website seemed an excellent way to go. As soon as I left my request, I got an email with offers from local contractors."
+		},
+	},
+	
+	"roofing": {
+		"slider1":{
+			"service":"roofing",
+			"stars":"5-stars.svg",
+			"author":"Willie Browning, San Antonio, TX",
+			"title":"I found my window contractor here",
+			"description":"I lacked time looking for window replacement companies myself, so a contractor-matching website seemed an excellent way to go. As soon as I left my request, I got an email with offers from local contractors."
+		},
+		"slider2":{
+			"service":"roofing",
+			"stars":"4s-stars.svg",
+			"author":"Willie Browning, San Antonio, TX",
+			"title":"I found my window contractor here",
+			"description":"I lacked time looking for window replacement companies myself, so a contractor-matching website seemed an excellent way to go. As soon as I left my request, I got an email with offers from local contractors."
+		},
+		"slider3":{
+			"service":"roofing",
+			"stars":"4s-stars.svg",
+			"author":"Willie Browning, San Antonio, TX",
+			"title":"I found my window contractor here",
+			"description":"I lacked time looking for window replacement companies myself, so a contractor-matching website seemed an excellent way to go. As soon as I left my request, I got an email with offers from local contractors."
+		},
+	},
+	
+	"windows": {
+		"slider1":{
+			"service":"windows",
+			"stars":"5-stars.svg",
+			"author":"Willie Browning, San Antonio, TX",
+			"title":"I found my window contractor here",
+			"description":"I lacked time looking for window replacement companies myself, so a contractor-matching website seemed an excellent way to go. As soon as I left my request, I got an email with offers from local contractors."
+		},
+		"slider2":{
+			"service":"windows",
+			"stars":"4s-stars.svg",
+			"author":"Willie Browning, San Antonio, TX",
+			"title":"I found my window contractor here",
+			"description":"I lacked time looking for window replacement companies myself, so a contractor-matching website seemed an excellent way to go. As soon as I left my request, I got an email with offers from local contractors."
+		},
+		"slider3":{
+			"service":"windows",
+			"stars":"4s-stars.svg",
+			"author":"Willie Browning, San Antonio, TX",
+			"title":"I found my window contractor here",
+			"description":"I lacked time looking for window replacement companies myself, so a contractor-matching website seemed an excellent way to go. As soon as I left my request, I got an email with offers from local contractors."
+		},
+	},
+	
+	"bathroom": {
+		"slider1":{
+			"service":"bathroom",
+			"stars":"5-starss.svg",
+			"author":"Willie Browning, San Antonio, TX",
+			"title":"I found my window contractor here",
+			"description":"I lacked time looking for window replacement companies myself, so a contractor-matching website seemed an excellent way to go. As soon as I left my request, I got an email with offers from local contractors."
+		},
+		"slider2":{
+			"service":"bathroom",
+			"stars":"4s-stars.svg",
+			"author":"Willie Browning, San Antonio, TX",
+			"title":"I found my window contractor here",
+			"description":"I lacked time looking for window replacement companies myself, so a contractor-matching website seemed an excellent way to go. As soon as I left my request, I got an email with offers from local contractors."
+		},
+		"slider3":{
+			"service":"bathroom",
+			"stars":"4s-stars.svg",
+			"author":"Willie Browning, San Antonio, TX",
+			"title":"I found my window contractor here",
+			"description":"I lacked time looking for window replacement companies myself, so a contractor-matching website seemed an excellent way to go. As soon as I left my request, I got an email with offers from local contractors."
+		},
+	},
+}
 
 $('#get-service').click(function(){
-    let selectedService=$("#selected-Service").val();
-	
+    let selectedService=$("#selected-Service").val();	
 	if(selectedService!=''){
 		urlS=window.location.href
 		urlS=urlS.replace("index.html",'')
@@ -17,6 +110,15 @@ $('#get-service').click(function(){
 	}
 });
 
+$("#footer-description").text(allDetails.footerDesc)
+$("#bathroom-service").text(allDetails.bathroomService)
+$("#roofing-service").text(allDetails.roofingService)
+$("#window-service").text(allDetails.windowService)
+
+$( document ).ready(function() {
+	
+
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";

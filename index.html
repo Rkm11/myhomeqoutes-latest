@@ -49,23 +49,24 @@
   </header><!-- End Header -->
 
   <section id="hero-animated" class="hero-animated d-flex">
-    <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative" style="margin-top:20px;" data-aos="zoom-out">
+    <div class="container d-flex flex-column justify-content-center align-items-center text-center position-relative main-desc" data-aos="zoom-out">
       <h1>Get Matched to Verified <span style="color:#94C565">Home Renovation Contractors Near You</span></h1>
       <p>Top residential remodeling services are at your fingertips</p>
 	  
 	  
 	  
 	  <div class="top__section-form">
-		<div class="form" style="margin-left:208px;">
-			<div class="form-item" style="float:left;">
+		<div class="form">
+			<div class="form-item select-services">
 				<select class="form-select service-select" id="selected-Service">
 				  <option value="bathroom">Bathroom</option>
 				  <option value="roofing">Roofing</option>
 				  <option value="windows">Windows</option>
 				</select>                 
 			</div>
+			<br>
 			<div class="form-item">
-				<button type="button" id="mainGetQuoteButton" class="btn btn-green" data-traceable="" data-traceable-point="getFreeQuoteButton">GET FREE QUOTE</button>
+				<button type="button" id="get-service" class="btn btn-green" data-traceable="" data-traceable-point="getFreeQuoteButton">GET FREE QUOTE</button>
 			</div>
 		</div>
      </div>
@@ -83,16 +84,16 @@
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out">
             <div class="service-item position-relative">
               <div class="Service-icon"><img src="assets/img/bathroom_1.svg" class="img-fluid animated"></div>
-              <h4><a href="" class="stretched-link">Bathroom</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4><a href="javascript:void(0)" class="stretched-link">Bathroom</a></h4>
+              <p id="bathroom-service"></p>
             </div>
           </div><!-- End Service Item -->
 
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out">
             <div class="service-item position-relative">
               <div class="Service-icon"><img src="assets/img/roof.svg" class="img-fluid animated"></div>
-              <h4><a href="" class="stretched-link">Roofing</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4><a href="javascript:void(0)" class="stretched-link">Roofing</a></h4>
+              <p id="roofing-service"></p>
             </div>
           </div><!-- End Service Item -->
           
@@ -100,8 +101,8 @@
           <div class="col-xl-3 col-md-6 d-flex" data-aos="zoom-out">
             <div class="service-item position-relative">
               <div class="Service-icon"><img src="assets/img/window-7775.svg" class="img-fluid animated"></div>
-              <h4><a href="" class="stretched-link">Windows</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <h4><a href="javascript:void(0)" class="stretched-link">Windows</a></h4>
+              <p id="window-service"></p>
             </div>
           </div><!-- End Service Item -->
 
@@ -118,12 +119,12 @@
     <section id="clients1" class="clients">
       <div class="container" data-aos="zoom-out">
         <div class="clients-slider swiper">
-          <div class="swiper-wrapper align-items-center">
+          <div class="swiper-wrapper align-items-center" id="main-slider">
             
 			<div class="swiper-slide slide__item">
 				<div class="slide__rat">
 						<span class="name night-blue">roofing</span>
-						<span class="stars"><img src="assets/img/4s-stars.svg" alt="stars"></span>
+						<span class="stars"><img src="assets/img/5-stars.svg" alt="stars"></span>
 					</div>
 					<div class="author">Willie Browning, San Antonio, TX</div>
 					<div class="text-bold">I found my window contractor here</div>
@@ -169,7 +170,7 @@
 			<div class="swiper-slide slide__item">
 				<div class="slide__rat">
 						<span class="name green">bathroom</span>
-						<span class="stars"><img src="assets/img/4s-stars.svg" alt="stars"></span>
+						<span class="stars"><img src="assets/img/5-stars.svg" alt="stars"></span>
 					</div>
 					<div class="author">Willie Browning, San Antonio, TX</div>
 					<div class="text-bold">I found my window contractor here</div>
@@ -199,7 +200,7 @@
 			<div class="swiper-slide slide__item">
 				<div class="slide__rat">
 						<span class="name dark-blue">windows</span>
-						<span class="stars"><img src="assets/img/4s-stars.svg" alt="stars"></span>
+						<span class="stars"><img src="assets/img/5-stars.svg" alt="stars"></span>
 					</div>
 					<div class="author">Willie Browning, San Antonio, TX</div>
 					<div class="text-bold">I found my window contractor here</div>
@@ -219,8 +220,8 @@
   <footer id="footer" class="footer">
 
     <div class="footer-legal text-center">
-		<div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
-			<p>This Website is an advertising marketplace for individuals and companies who are seeking consumer referrals for services or products. We are not a provider, manufacturer, or installer. The information provided by you to us will be sent to a manufacturer and/or installer in your area. We do not endorse, warrant, or guarantee any service or products of any individual or company you choose. While any information shared with you is believed to be accurate and reliable, the owners/operators of this Website specifically disclaim all warranties, express, implied or statutory, regarding the accuracy, timeliness, and/or completeness of the information provided. The content of any information or service contained thereon (the “Content”) are provided on an "as is" basis. Federal and State tax credits or incentives are not available in all locations and not available to all individuals.</p>
+		<div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center" >
+			<p id="footer-description"></p>
 		</div>
       <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
         <div class="d-flex flex-column align-items-center align-items-lg-start">
@@ -263,7 +264,6 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-    <script src="assets/js/jquery.dd.js"></script>
 
 </body>
 

@@ -42,7 +42,7 @@ a:hover {
 }
 .top__section-form .form {
     display: grid;
-    grid-template-columns: 295px 295px 241px;
+    grid-template-columns: 295px 0px 241px;
     gap: 10px;
 }
 
@@ -3306,6 +3306,19 @@ min-height:60px;
   padding: 0;
   margin: 0;
 }
+/*Ask client*/
+.footer-container .footer-text-container {
+    font-family: Poppins;
+    font-size: 11px;
+    color: #fff !important;
+    text-align: center;
+}
+
+.service-div {
+    min-width: 50%;
+    background: white;
+    border-radius: 16px;
+}
 
 .footer .footer-content .footer-links ul i {
   padding-right: 2px;
@@ -3320,13 +3333,30 @@ min-height:60px;
   align-items: center;
 }
 
+@media screen and (min-width: 400px)  {
+        .mobile-break { display: none; }
+		
+	.top__section-form .form {
+		isplay: inline-block
+    }
+
 .footer .footer-content .footer-links ul li:first-child {
   padding-top: 0;
+}
+.select-services{
+    /* float: left; */
+    --display: inline-block;
+    --margin-bottom: 10px;
+
 }
 
 a.footer-url {
     color: black;
     font-weight: bold;
+}
+
+.main-desc {
+	margin-top:50px;
 }
 
 .footer .footer-content .footer-links ul a {
