@@ -54,7 +54,7 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h3 class="inner-header">Unsubscribe</h3>
+          <h3 class="inner-header"><center>Unsubscribe</center></h3>
           <ol>
             <li><a href="index.html">Home</a></li>
             <li>Unsubscribe</li>
@@ -69,14 +69,22 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-header">
-          <h2>Privacy Policy</h2>
-		  <p>
-		<div class="alert-message block-message success">
-			<a class="close" href="#">×</a>
-			<p class="title"><strong>Unsubscription successful</strong></p>
-			<p>Your email address is now unsubscribed from future update emails for this item.</p>
+			<div class="alert-message block-message success" style="display:none;">
+				<p class="title"><strong>Unsubscription successful</strong> <a class="close" href="javascript:void(0)">×</a></p>
+				<p>Your email address is now unsubscribed from future update emails for this item.</p>
+			</div>
+			<div class="top__section-form">
+				<div class="form">
+					<div class="form-item">
+						<input type="text" class="form__input-text no-valid" id="unsubscribe-email" placeholder="email address"> 
+						<div class="validate__text" style="display:none;">Please enter valid email id.</div>						
+					</div>
+					<br>
+					<div class="form-item">
+						<button type="button" id="unsubscribe" class="btn btn-green">Unsubscribe</button>
+					</div>
+			</div>
 		</div>
-        </p>
         </div>
 	
         

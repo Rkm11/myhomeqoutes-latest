@@ -100,6 +100,24 @@ var allDetails = {
 	},
 }
 
+$("#unsubscribe").click(function(){
+	let unsubscribeEmail=$("#unsubscribe-email").val();	
+	$(".validate__text").hide();
+	$("#unsubscribe-email").removeClass("no-valid");
+	if(unsubscribeEmail!=''){
+		if( /(.+)@(.+){2,}\.(.+){2,}/.test(unsubscribeEmail) ){
+			$("#unsubscribe-email").val('')
+			$(".alert-message").show();
+		} else {
+		  $(".validate__text").show();
+		$("#unsubscribe-email").addClass("no-valid");
+		}
+	}else {
+		$(".validate__text").show();
+		$("#unsubscribe-email").addClass("no-valid");
+	}
+});
+
 $('#get-service').click(function(){
     let selectedService=$("#selected-Service").val();	
 	if(selectedService!=''){
