@@ -124,7 +124,9 @@ h6 {
   width: 100%;
   height: 100vh;
 }
-
+.footer p {
+	text-align:left;
+}
 #preloader:before,
 #preloader:after {
   content: "";
@@ -372,7 +374,7 @@ color: var(--color-primary) !important;
 	background:#2e3ece;
 }
 .name.night-blue {
-	background-color:#6977f9;
+	background-color:red;
 }
 .slide__item .text {
     margin: 5px 0 0 0;
@@ -767,6 +769,15 @@ min-height:60px;
     z-index: 9996;
   }
 }
+.service-container{
+	min-height:540px;
+}
+.service-header{
+	color:#000;
+	align:center;
+	font-weight:bold;
+	margin-bottom:10px;
+}
 
 /*--------------------------------------------------------------
 # Index Page
@@ -783,8 +794,10 @@ min-height:60px;
   --padding: 120px 0 60px;
 }
 
-.featured-services{
-	background-color:#f8f8f8
+.featured-services {
+    background-color: #f8f8f8;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 .hero-animated h2 {
   margin: 0 0 10px 0;
@@ -794,9 +807,13 @@ min-height:60px;
   font-family: var(--font-secondary);
 }
 
+.clients-slider.swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
+	margin-top:65px;
+}
 .Service-icon {
     height: 120px;
     width: 120px;
+    margin-left: 90px;
 }
 
 .hero-animated h2 span {
@@ -876,6 +893,7 @@ min-height:60px;
     font-size: 18px;
     margin-bottom: 30px;
   }
+  
 
   .hero-animated .btn-get-started,
   .hero-animated .btn-watch-video {
@@ -1281,12 +1299,14 @@ min-height:60px;
 # Featured Services Section
 --------------------------------------------------------------*/
 .featured-services .service-item {
-  padding: 30px;
-  transition: all ease-in-out 0.4s;
-  background: var(--color-white);
-  height: 100%;
-  border-radius:30px;
+    padding: 50px;
+    transition: all ease-in-out 0.4s;
+    background: var(--color-white);
+    height: 100%;
+    border-radius: 30px;
+    margin: 10px;
 }
+
 
 .featured-services .service-item .icon {
   margin-bottom: 10px;
@@ -1299,9 +1319,10 @@ min-height:60px;
 }
 
 .featured-services .service-item h4 {
-  font-weight: 600;
-  margin-bottom: 15px;
-  font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 24px;
+    margin-top: 15px;
 }
 
 .featured-services .service-item h4 a {
@@ -3350,13 +3371,50 @@ min-height:60px;
 
 }
 
+.alert-message.block-message.success {
+    background-color: #d1eed1;
+    border-color: #bfe7bf;
+}
+
+.alert-message.block-message.error, .alert-message.block-message.success, .alert-message.block-message.info {
+    color: #404040;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+.alert-message .close {
+    margin-top: 1px;
+}
+.close:hover {
+    color: #000;
+    text-decoration: none;
+    filter: alpha(opacity = 40);
+    -khtml-opacity: .4;
+    -moz-opacity: .4;
+    opacity: .4;
+}
+
+.alert-message.block-message ul, .alert-message.block-message p {
+    margin-right: 30px;
+}
+.alert-message .title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.alert-message p {
+    margin-bottom: 0;
+}
+
 a.footer-url {
     color: black;
     font-weight: bold;
 }
 
 .main-desc {
-	margin-top:50px;
+	margin-top:60px;
+	margin-bottom:20px;
+}
+.main-desc p {
+	margin-bottom:40px;
 }
 
 .footer .footer-content .footer-links ul a {

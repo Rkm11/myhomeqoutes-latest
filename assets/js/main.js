@@ -110,15 +110,16 @@ $('#get-service').click(function(){
 	}
 });
 
-$("#footer-description").text(allDetails.footerDesc)
+$("#footer-description").append(allDetails.footerDesc)
 $("#bathroom-service").text(allDetails.bathroomService)
 $("#roofing-service").text(allDetails.roofingService)
 $("#window-service").text(allDetails.windowService)
 
-$( document ).ready(function() {
-	
-
-});
+$(document).ready(function(){
+//  $(document).bind("contextmenu",function(e){
+  //   e.preventDefault();//or return false;
+ //});
+ });
 
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
