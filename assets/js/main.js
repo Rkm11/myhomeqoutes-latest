@@ -100,10 +100,6 @@ var allDetails = {
 	},
 }
 
-$('.carousel').carousel({
-  interval: 2000
-})
-
 $(".window-featured,.roofing-featured,.bathroom-featured").click(function(){
 		let selectedService=$("#selected-Service").val();	
 		console.log(selectedService);
