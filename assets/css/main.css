@@ -3568,7 +3568,7 @@ a.footer-url {
 
 }
 
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 740px) {
 	.slide__item {width:100% !important;}
 	.clients {display:none;}
 	.testimonials {display:block;}
