@@ -100,15 +100,28 @@ var allDetails = {
 	},
 }
 
-$(".window-featured,.roofing-featured,.bathroom-featured").click(function(){
-		let selectedService=$("#selected-Service").val();	
-		console.log(selectedService);
-		urlS=window.location.href
+$(".window-featured").click(function(){
+	console.log('sadas')
+		redirectService('windows');
+		
+});
+
+$(".roofing-featured").click(function(){
+		redirectService('roofing');
+		
+});
+
+$(".bathroom-featured").click(function(){
+		redirectService('bathroom');
+		
+});
+
+function redirectService(selectedService) {
+	urlS=window.location.href
 		urlS=urlS.replace("index.html",'')
 		urlS=urlS.replace("#",'')
 	window.location.assign(urlS+ selectedService+'.html')
-});
-
+}
 $("#unsubscribe").click(function(){
 	let unsubscribeEmail=$("#unsubscribe-email").val();	
 	$(".validate__text").hide();
@@ -141,12 +154,6 @@ $("#footer-description").append(allDetails.footerDesc)
 $("#bathroom-service").text(allDetails.bathroomService)
 $("#roofing-service").text(allDetails.roofingService)
 $("#window-service").text(allDetails.windowService)
-
-$(document).ready(function(){
-//  $(document).bind("contextmenu",function(e){
-  //   e.preventDefault();//or return false;
- //});
- });
 
 document.addEventListener('DOMContentLoaded', () => {
   "use strict";
@@ -446,3 +453,38 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+$(document).ready(function(){
+//  $(document).bind("contextmenu",function(e){
+  //   e.preventDefault();//or return false;
+ //});
+ 
+  // Optimalisation: Store the references outside the event handler:
+  const selectHeader1 = document.querySelector('#header');
+    var $window = $(window);
+    var $pane = $('#pane1');
+	
+    function checkWidth() {
+        var windowsize = $window.width();
+		console.log(windowsize);
+		if(windowsize <= 500){
+			$(".laptop-slider").hide();
+			$(".mobile-slider").show();
+			$(".main-logo").addClass("mobile-logo");
+			$("#hero-animated").addClass("mobile-margin");
+			$(".form").addClass("mobile-screen");
+			$("#hero-animated").removeClass("laptop-screen");
+			$(".form").attr("Style","grid-template-columns: 295px 0px 241px;");
+			console.log('mobile');			
+		}else{
+		$("#hero-animated").removeClass("mobile-margin");
+		$(".form").addClass("laptop-screen");
+		$(".form").attr("Style","grid-template-columns: 295px 0px 241px;");
+		$(".main-logo").addClass('moblie-logo');
+		$(".laptop-slider").show();
+		$(".mobile-slider").hide();
+		$(".form").removeClass("mobile-screen");
+	}
+    }
+	checkWidth();
+ });
