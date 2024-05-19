@@ -468,23 +468,92 @@ $(document).ready(function(){
         var windowsize = $window.width();
 		console.log(windowsize);
 		if(windowsize <= 500){
-			$(".laptop-slider").hide();
-			$(".mobile-slider").show();
+			//$(".laptop-slider").hide();
+			//$(".mobile-slider").show();
 			$(".main-logo").addClass("mobile-logo");
 			$("#hero-animated").addClass("mobile-margin");
 			$(".form").addClass("mobile-screen");
 			$("#hero-animated").removeClass("laptop-screen");
-			$(".form").attr("Style","grid-template-columns: 295px 0px 241px;");
+			$(".inner-page .form").attr("Style","grid-template-columns: 295px 0px 0px;");
 			console.log('mobile');			
 		}else{
 		$("#hero-animated").removeClass("mobile-margin");
 		$(".form").addClass("laptop-screen");
 		$(".form").attr("Style","grid-template-columns: 295px 0px 241px;");
 		$(".main-logo").addClass('moblie-logo');
-		$(".laptop-slider").show();
-		$(".mobile-slider").hide();
+		//$(".laptop-slider").show();
+		//$(".mobile-slider").hide();
 		$(".form").removeClass("mobile-screen");
 	}
     }
 	checkWidth();
+	
+	 $(document).ready(function(){
+	
+new Swiper('.reviews__inner > .reviews__slider', {
+  slidesPerView: 'auto',
+  spaceBetween: 13,
+  watchOverflow: true,
+  pagination: {
+      el: '.reviews__slider_pagination',
+      clickable: true
+  },
+  navigation: {
+      prevEl: '.reviews__slider_prev',
+      nextEl: '.reviews__slider_next'
+  },
+  breakpoints: {
+      500: {
+          slidesPerColumn: 1,
+          slidesPerView: 'auto'
+      },
+      320: {
+          slidesPerColumn: 2,
+          slidesPerView: 1
+      }
+  }
+});
+
+//reviews slider
+const swiperReviews = new Swiper('.reviews__slider', {
+  slidesPerView: 4,
+  spaceBetween: 16,
+  loop: true,
+  autoplay: {
+      delay: 10000,
+  },
+  navigation: {
+      nextEl: '.reb-button-next',
+      prevEl: '.reb-button-prev',
+      clickable: 'true'
+  },
+  pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: 'true'
+  },
+  breakpoints: {
+      // when window width is >= 320px
+      320: {
+          slidesPerView: 1,
+          spaceBetween: 10
+      },
+      // when window width is >= 480px
+      480: {
+          slidesPerView: 1,
+          spaceBetween: 16
+      },
+      // when window width is >= 640px
+      640: {
+          slidesPerView: 2,
+          spaceBetween: 10
+      },
+      920: {
+          slidesPerView: 4,
+          spaceBetween: 16
+      }
+  }
+});
+  
+  });
  });

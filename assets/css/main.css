@@ -31,6 +31,17 @@ a:hover {
     width: 100%;
 }
 
+.services__box{
+	    padding: 50px 0;
+}
+
+.my_container{
+	    max-width: 1480px;
+    padding: 0 20px;
+}
+
+
+
 .top__section-form {
     margin: auto;
 	padding:10px;
@@ -533,6 +544,7 @@ color: var(--color-primary) !important;
     font-size: 14px;
     font-weight: 400;
     line-height: 18px;
+	max-width:350px;
 }
 .text-bold {
     font-weight: 500;
@@ -578,15 +590,17 @@ color: var(--color-primary) !important;
     -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
 	min-height:230px;
+	max-width:auto;
 }
 
-.slide__item_lap{
+
+/*.slide__item_lap{
 	width:30% !important;
 }
 
 .slide__item_mob{
 	width:100% !important;
-}
+}*/
 
 .header .logo img {
   max-height: 50px;
@@ -948,7 +962,7 @@ min-height:60px;
 --------------------------------------------------------------*/
 .hero-animated {
   width: 100%;
-  min-height: 50vh;
+  --min-height: 50vh;
   background-size: cover;
   background-position: center center;
   --padding: 120px 0 60px;
@@ -959,15 +973,15 @@ min-height:60px;
 }
 
 .bathroom-section {
-	background: url(../img/bathroom1.png);
+	background: url(../img/bathroom_final.png) no-repeat;
 }
 
 .roofing-section {
-	background: url(../img/roofing.jpg) no-repeat;
+	background: url(../img/roofing_final.jpg) no-repeat;
 }
 
 .window-section {
-	background: url(../img/window (1).png) no-repeat;
+	background: url(../img/windows_final.png) no-repeat;
 }
 
 .featured-services {
@@ -985,7 +999,7 @@ min-height:60px;
 }
 
 .clients-slider.swiper.swiper-initialized.swiper-horizontal.swiper-backface-hidden {
-	margin-top:65px;
+	--margin-top:65px;
 }
 .Service-icon {
     height: 120px;
@@ -3607,11 +3621,11 @@ a.footer-url {
 }
 
 .main-desc {
-	margin-top:60px;
-	margin-bottom:20px;
+	margin-top:70px;
+	margin-bottom:70px;
 }
 .main-desc p {
-	margin-bottom:40px;
+	--margin-bottom:40px;
 }
 
 .footer .footer-content .footer-links ul a {
@@ -3697,6 +3711,18 @@ a.footer-url {
   text-decoration: none;
 }
 
+@media screen and (max-width: 1000px) {
+    .services__box .items-wrap {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .services__box .items-wrap {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media only screen and (min-width: 541px) {
 .testimonials {display:none;}
 .clients {display:block;}
@@ -3705,11 +3731,21 @@ a.footer-url {
 }
 
 
-@media only screen and (max-width: 400px) {
-	.slide__item {width:100% !important;}
+@media only screen and (max-width: 359px) {
+	--.slide__item {width:100% !important;}
 	.clients {display:none;}
 	.testimonials {display:block;}
 	.top__section-form .form {
 		display: inline-block
     }
+	
+	
 }
+
+ 
+  @media (min-width: 320px) { .slide__item{width:100%;}}
+@media (min-width: 768px) {.slide__item{width:100%;}}
+@media (min-width: 1024px) {.slide__item{width:100%;}}
+@media (min-width: 1220px) {.slide__item{width:100%;}}
+@media (min-width: 1440px) {.slide__item{width:100%;}}
+@media (max-width: 375px) { .slide__item{width:100%;}} 
