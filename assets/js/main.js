@@ -1,5 +1,5 @@
 var allDetails = {
-	"footerDesc":"This Website is an advertising marketplace for individuals and companies who are seeking consumer referrals for services or products. We are not a provider, manufacturer, or installer. The information provided by you to us will be sent to a manufacturer and/or installer in your area. We do not endorse, warrant, or guarantee any service or products of any individual or company you choose. While any information shared with you is believed to be accurate and reliable, the owners/operators of this Website specifically disclaim all warranties, express, implied or statutory, regarding the accuracy, timeliness, and/or completeness of the information provided. The content of any information or service contained thereon (the “Content”) are provided on an as is basis. Federal and State tax credits or incentives are not available in all locations and not available to all individuals.",
+	"footerDesc":"This website serves as an advertising platform connecting individuals and companies seeking consumer referrals for services or products. We don't act as a provider, manufacturer, or installer. Your information will be forwarded to a manufacturer and/or installer in your area. We don't endorse, warrant, or guarantee any service or products of any individual or company you select. While we believe the information shared is accurate and reliable, we expressly disclaim all warranties, whether express, implied, or statutory, regarding the accuracy, timeliness, and/or completeness of the information provided. The content and services provided are on an as is basis. Federal and State tax credits or incentives may not be available in all locations or to all individuals.",
 	"bathroomService":"Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi",
 	"windowService":"Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi",
 	"roofingService":"Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi",
@@ -160,14 +160,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /**
    * Preloader
-   */
+   
   const preloader = document.querySelector('#preloader');
   if (preloader) {
     window.addEventListener('load', () => {
       preloader.remove();
     });
   }
-
+*/
   /**
    * Sticky header on scroll
    */
