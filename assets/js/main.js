@@ -101,7 +101,6 @@ var allDetails = {
 }
 
 $(".window-featured").click(function(){
-	console.log('sadas')
 		redirectService('windows');
 		
 });
@@ -116,11 +115,107 @@ $(".bathroom-featured").click(function(){
 		
 });
 
+function getUrlParameter(sParam) {
+    var sPageURL = window.location.search.substring(1),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+    for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+            return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+        }
+    }
+    return false;
+}
+
+function getFn(cookie_name) {
+	const cookies =
+		document.cookie.split('; ');
+	const cookieMap = {};
+	cookies.forEach(cookie => {
+		const [name, value] = cookie.split('=');
+		cookieMap[name] = value;
+	});
+	const service_val = cookieMap['exampleCookie'];
+	if(typeof service_val !== 'undefined' && service_val !=''){
+			return service_val;
+	}
+	return service_val;
+}
+function getFn1() {
+            const cookies =
+                document.cookie.split('; ');
+            const cookieMap = {};
+            cookies.forEach(cookie => {
+                const [name, value] = cookie.split('=');
+                cookieMap[name] = value;
+            });
+            const cookieVal = cookieMap['exampleCookie'];
+        }
+
+
+var clickId = getUrlParameter('clickId');
+var source = getUrlParameter('source');
+urlS=window.location.href
+if (typeof clickId !== 'undefined' && clickId !='' && typeof source !== 'undefined' && source !='') {
+		setCookie('latestclickid',clickId,360);
+		setCookie('lattestsourceid',source,360);
+		$(".service").attr("data-clickid",clickId);
+		$(".service").attr("data-source",source);		
+	/* if(urlS.includes('bathroom.html')){
+		$(".bathroom-service").attr("data-clickid",clickId);
+		$(".bathroom-service").attr("data-source",source);
+		setCookie('bathroomclickid',clickId,360);
+		setCookie('bathroomsource',source,360);
+	}else if(urlS.includes('roofing.html')){
+		$(".roofing-service").attr("data-clickid",clickId);
+		$(".roofing-service").attr("data-source",source);	
+		setCookie('roofingclickid',clickId,360);
+		setCookie('roofingsource',source,360);
+	}else if(urlS.includes('windows.html')){
+		$(".windows-service").attr("data-clickid",clickId);
+		$(".windows-service").attr("data-source",source);	
+		setCookie('windowsclickid',clickId,360);
+		setCookie('windowssource',source,360);	
+	}*/
+		
+}else{
+	console.log(getCookie('latestclickid'));
+		console.log(getCookie('lattestsourceid'));
+	if(getCookie('latestclickid') !='' && getCookie('lattestsourceid') !=''){
+		$(".service").attr("data-clickid",getCookie('latestclickid'));
+		$(".service").attr("data-source",getCookie('lattestsourceid'));
+	}
+	/*if(urlS.includes('bathroom.html') && getCookie('latestclickid') !='' && getCookie('lattestsourceid') !=''){
+		
+		$(".service").attr("data-clickid",getCookie('latestclickid'));
+		$(".service").attr("data-source",getCookie('lattestsourceid'));
+		$(".bathroom-service").attr("data-clickid",getCookie('bathroomclickid'));
+		$(".bathroom-service").attr("data-source",getCookie('lattestsourceid'));
+	}else if(urlS.includes('roofing.html')&& getCookie('roofingclickid') !='' && getCookie('lattestsourceid') !=''){
+		$(".service").attr("data-clickid",getCookie('latestclickid'));
+		$(".service").attr("data-source",getCookie('lattestsourceid'));
+		$(".roofing-service").attr("data-clickid",getCookie('roofingclickid'));
+		$(".roofing-service").attr("data-source",getCookie('roofingsource'));
+	}else if(urlS.includes('windows.html')&& getCookie('windowsclickid') !='' && getCookie('lattestsourceid') !=''){
+		$(".service").attr("data-clickid",getCookie('latestclickid'));
+		$(".service").attr("data-source",getCookie('lattestsourceid'));
+		$(".windows-service").attr("data-clickid",getCookie('windowsclickid'));
+		$(".windows-service").attr("data-source",getCookie('windowssource'));
+	}*/
+}
+
+var queryString = window.location.search;
+var _href = $("#base-url").attr("href");
+$("#base-url").attr('href',_href +queryString );
 function redirectService(selectedService) {
-	urlS=window.location.href
-		urlS=urlS.replace("index.html",'')
-		urlS=urlS.replace("#",'')
-	window.location.assign(urlS+ selectedService+'.html')
+		urlS=window.location.href
+		urlS=urlS.replace("index.html",selectedService+'.html')
+		//urlS=urlS.replace("#",'')
+	window.location.assign(urlS)
 }
 $("#unsubscribe").click(function(){
 	let unsubscribeEmail=$("#unsubscribe-email").val();	
@@ -144,9 +239,9 @@ $('#get-service').click(function(){
     let selectedService=$("#selected-Service").val();	
 	if(selectedService!=''){
 		urlS=window.location.href
-		urlS=urlS.replace("index.html",'')
-		urlS=urlS.replace("#",'')
-		 window.location.assign(urlS+ selectedService+'.html')
+		urlS=urlS.replace("index.html",selectedService+'.html')
+		//urlS=urlS.replace("#",'')
+		 window.location.assign(urlS)
 	}
 });
 
@@ -310,6 +405,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+
   /**
    * Scroll top button
    */
@@ -466,7 +562,6 @@ $(document).ready(function(){
 	
     function checkWidth() {
         var windowsize = $window.width();
-		console.log(windowsize);
 		if(windowsize <= 500){
 			//$(".laptop-slider").hide();
 			//$(".mobile-slider").show();
@@ -474,8 +569,7 @@ $(document).ready(function(){
 			$("#hero-animated").addClass("mobile-margin");
 			$(".form").addClass("mobile-screen");
 			$("#hero-animated").removeClass("laptop-screen");
-			$(".inner-page .form").attr("Style","grid-template-columns: 295px 0px 0px;");
-			console.log('mobile');			
+			$(".inner-page .form").attr("Style","grid-template-columns: 295px 0px 0px;");	
 		}else{
 		$("#hero-animated").removeClass("mobile-margin");
 		$(".form").addClass("laptop-screen");
@@ -557,3 +651,26 @@ const swiperReviews = new Swiper('.reviews__slider', {
   
   });
  });
+
+function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires=" + d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
